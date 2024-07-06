@@ -34,7 +34,7 @@ export default function Search() {
   const debouncedSearch = useCallback(
     debounce((query) => {
       searchRecipe(query);
-    }, 300),
+    }, 300), // poziva se posle 300ms posle posldenjeg unosa
     []
   );
 

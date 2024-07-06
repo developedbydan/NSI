@@ -28,7 +28,6 @@ export default function Signup() {
     setLoading(true);
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(res);
     } catch (err) {
       console.log(err);
       alert("Sing up failed: " + err.message);

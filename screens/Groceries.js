@@ -91,6 +91,8 @@ export default function Groceries() {
       );
       await deleteDoc(recipeDocRef);
 
+      await AsyncStorage.removeItem(checkboxStorageKey); // Delete checkbox state
+
       // Update AsyncStorage
       const updatedGroceries = groceries.filter(
         (recipe) => recipe.id !== recipeId
