@@ -2,17 +2,16 @@ import { useState, useCallback } from "react";
 import {
   StyleSheet,
   Text,
-  View,
   Platform,
   ScrollView,
   Image,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import { FIREBASE_AUTH, FIREBASE_DB } from "../FirebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Favorite() {
@@ -96,22 +95,22 @@ const styles = StyleSheet.create({
   },
 
   headingText: {
-    marginTop: 10,
+    marginTop: 40,
     color: "#ffffff",
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: 15,
+    marginBottom: 20,
   },
 
   container: {
-    paddingTop: 50,
+    paddingTop: 40,
   },
 
   favoriteContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 50,
+    marginBottom: 40,
     gap: 20,
   },
 

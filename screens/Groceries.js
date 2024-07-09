@@ -12,8 +12,8 @@ import {
   ScrollView,
   View,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function Groceries() {
@@ -166,12 +166,12 @@ const styles = StyleSheet.create({
   },
 
   headingText: {
-    marginTop: 10,
+    marginTop: 40,
     color: "#ffffff",
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: 15,
+    marginBottom: 20,
   },
 
   groceriesContainer: {
