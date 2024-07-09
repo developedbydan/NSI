@@ -23,7 +23,8 @@ const screenOptions = {
   unmountOnBlur: true,
   tabBarStyle: {
     backgroundColor: "#000000",
-    borderColor: "#000000",
+    borderTopColor: "#212121",
+    borderTopWidth: 1,
     height: 60,
     justifyContent: "space-between",
     paddingHorizontal: 30,
@@ -33,7 +34,9 @@ const screenOptions = {
 // Ekrani kada je korisnik prijavljen
 const InsideLayout = () => {
   return (
-    <InsideStack.Navigator>
+    <InsideStack.Navigator
+      screenOptions={{ ...screenOptions, animation: "slide_from_right" }}
+    >
       <InsideStack.Screen
         name="HomeScreen"
         component={HomeStack}
@@ -119,8 +122,11 @@ export default function App() {
   }, []);
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
+    <NavigationContainer theme={{ colors: { background: "black" } }}>
+      <Stack.Navigator
+        initialRouteName="Welcome"
+        screenOptions={{ ...screenOptions, animation: "slide_from_right" }}
+      >
         {user ? (
           <Stack.Screen
             name="Inside"

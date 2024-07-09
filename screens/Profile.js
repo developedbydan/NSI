@@ -5,6 +5,7 @@ import {
   Platform,
   View,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import React from "react";
 import { FIREBASE_AUTH } from "../FirebaseConfig";
@@ -28,7 +29,10 @@ export default function Profile() {
   return (
     <SafeAreaView style={styles.droidSafeArea}>
       <View style={styles.container}>
-        <Text style={styles.text}>Email: {auth.currentUser?.email}</Text>
+        <Text style={styles.headingText}>Profile</Text>
+        <Image source={require("../assets/avatar.png")} style={styles.avatar} />
+        <Text style={styles.email}>Email:</Text>
+        <Text style={styles.userEmail}>{auth.currentUser?.email}</Text>
         <TouchableOpacity style={styles.button} onPress={handleSignOut}>
           <Text style={styles.buttonText}>Sign Out</Text>
         </TouchableOpacity>
@@ -45,27 +49,40 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   container: {
-    height: 500,
     justifyContent: "center",
     alignItems: "center",
   },
   headingText: {
+    marginTop: 40,
     color: "#ffffff",
-    fontSize: 30,
-    marginTop: 150,
-    marginBottom: 20,
+    fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
+    marginBottom: 150,
   },
-  text: {
-    color: "white",
+
+  avatar: {
+    width: 150,
+    height: 150,
+  },
+  email: {
+    color: "#ffffff",
+    fontWeight: "bold",
+    fontSize: 17,
+    marginTop: 25,
+    marginBottom: 5,
+  },
+  userEmail: {
+    color: "#CCCCCC",
+    fontWeight: "bold",
+    fontSize: 15,
   },
   button: {
-    marginTop: 40,
+    marginTop: 60,
     backgroundColor: "#E95353",
     height: 44,
-    width: 200,
-    borderRadius: 30,
+    width: 150,
+    borderRadius: 40,
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
